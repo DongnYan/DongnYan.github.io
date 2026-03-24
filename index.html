@@ -6,14 +6,11 @@
     <title>颜东宁 | Dongning Yan</title>
     <meta
       name="description"
-      content="Bilingual personal website for Dongning Yan. White-dominant editorial layout with selected experience, education, skills, and hobbies."
+      content="Bilingual personal website for Dongning Yan."
     />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#072f49" />
     <meta property="og:title" content="颜东宁 | Dongning Yan" />
-    <meta
-      property="og:description"
-      content="Bilingual personal website with a clean editorial layout and a portrait-led hero."
-    />
+    <meta property="og:description" content="Bilingual personal website for Dongning Yan." />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,18 +21,17 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="site-frame">
+    <div class="page">
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="Go to top">
+        <a class="brand" href="#profile">
           <span class="brand-name">颜东宁</span>
           <span class="brand-subtitle" id="brandSubtitle"></span>
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#profile" id="navProfile"></a>
-          <a href="#experience" id="navExperience"></a>
-          <a href="#education" id="navEducation"></a>
-          <a href="#life" id="navLife"></a>
+          <a href="#internships" id="navInternships"></a>
+          <a href="#hobbies" id="navHobbies"></a>
           <a href="#contact" id="navContact"></a>
         </nav>
 
@@ -45,148 +41,113 @@
         </div>
       </header>
 
-      <main id="top">
-        <section class="hero">
+      <main>
+        <section class="hero" id="profile">
           <div class="hero-shell">
             <div class="hero-copy">
-              <p class="hero-kicker hero-item" id="heroKicker"></p>
-              <h1 class="hero-title hero-item" id="heroTitle"></h1>
-              <p class="hero-intro hero-item" id="heroIntro"></p>
-              <p class="hero-summary hero-item" id="heroSummary"></p>
-
-              <div class="hero-detail-grid hero-item">
-                <div class="detail-line">
-                  <span id="detailLocationLabel"></span>
-                  <strong id="detailLocation"></strong>
-                </div>
-                <div class="detail-line">
-                  <span id="detailEmailLabel"></span>
-                  <strong id="detailEmail"></strong>
-                </div>
-                <div class="detail-line">
-                  <span id="detailPhoneLabel"></span>
-                  <strong id="detailPhone"></strong>
-                </div>
-              </div>
-
-              <div class="hero-actions hero-item">
-                <a class="button button-primary" href="#experience" id="primaryCta"></a>
-                <a class="button button-secondary" href="#contact" id="secondaryCta"></a>
-              </div>
+              <h1 class="hero-title" id="heroTitle"></h1>
+              <p class="hero-subtitle" id="heroSubtitle"></p>
             </div>
 
-            <div class="hero-media hero-item">
-              <figure class="portrait-block">
-                <img
-                  class="hero-portrait"
-                  src="./1.jpg"
-                  alt="Portrait of Dongning Yan"
-                />
-                <figcaption id="portraitCaption"></figcaption>
-              </figure>
+            <div class="hero-photo-wrap">
+              <img class="hero-photo" src="./1.jpg" alt="Portrait of Dongning Yan" />
+            </div>
+          </div>
+
+          <div class="profile-layout">
+            <div class="section-head">
+              <span>01</span>
+              <h2 id="profileTitle"></h2>
+            </div>
+
+            <div class="profile-content">
+              <div class="education-block">
+                <p class="profile-label" id="dualDegreeLabel"></p>
+
+                <article class="school-item">
+                  <img src="./深圳大学校徽.jpg" alt="Shenzhen University logo" />
+                  <div>
+                    <h3>深圳大学</h3>
+                    <p id="szuDegree"></p>
+                  </div>
+                </article>
+
+                <article class="school-item">
+                  <img src="./Audencia校徽.jpg" alt="Audencia logo" />
+                  <div>
+                    <h3>Audencia Business School</h3>
+                    <p id="audenciaDegree"></p>
+                  </div>
+                </article>
+
+                <div class="plain-text-group">
+                  <p class="group-label" id="coreCoursesLabel"></p>
+                  <p id="coreCoursesText"></p>
+                </div>
+
+                <div class="plain-text-group">
+                  <p class="group-label" id="exchangeLabel"></p>
+                  <p id="exchangeText"></p>
+                </div>
+
+                <div class="plain-text-group">
+                  <p class="group-label" id="ieltsLabel"></p>
+                  <p id="ieltsText"></p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="section" id="profile">
-          <div class="section-marker">
-            <span>01</span>
-            <p id="profileEyebrow"></p>
-          </div>
-          <div class="section-shell">
-            <h2 class="section-title" id="profileTitle"></h2>
-            <div class="section-content">
-              <p class="section-lead" id="profileBody"></p>
-              <ul class="signal-list" id="focusList"></ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="experience">
-          <div class="section-marker">
+        <section class="section" id="internships">
+          <div class="section-head">
             <span>02</span>
-            <p id="experienceEyebrow"></p>
+            <h2 id="internshipsTitle"></h2>
           </div>
-          <div class="section-shell">
-            <h2 class="section-title" id="experienceTitle"></h2>
-            <div class="section-content">
-              <div class="experience-list" id="experienceList"></div>
-            </div>
-          </div>
+
+          <div class="internship-list" id="internshipList"></div>
         </section>
 
-        <section class="section" id="education">
-          <div class="section-marker">
+        <section class="section" id="hobbies">
+          <div class="section-head">
             <span>03</span>
-            <p id="educationEyebrow"></p>
+            <h2 id="hobbiesTitle"></h2>
           </div>
-          <div class="section-shell">
-            <h2 class="section-title" id="educationTitle"></h2>
-            <div class="section-content section-content-split">
-              <div>
-                <p class="section-lead" id="educationBody"></p>
-                <div class="education-list" id="educationList"></div>
-              </div>
-              <div class="skill-list" id="skillsList"></div>
-            </div>
-          </div>
-        </section>
 
-        <section class="section" id="life">
-          <div class="section-marker">
-            <span>04</span>
-            <p id="lifeEyebrow"></p>
-          </div>
-          <div class="section-shell life-shell">
-            <div>
-              <h2 class="section-title" id="lifeTitle"></h2>
-              <p class="section-lead" id="lifeBody"></p>
+          <div class="hobbies-shell">
+            <div class="hobbies-copy">
               <ul class="hobby-list" id="hobbyList"></ul>
             </div>
 
-            <div class="life-gallery">
-              <figure class="life-photo-main">
-                <img src="./1.jpg" alt="Portrait of Dongning Yan" />
-                <figcaption id="lifeCaption"></figcaption>
+            <div class="hobby-gallery">
+              <figure class="gallery-photo">
+                <img src="./生活照2.jpg" alt="Basketball photo" />
               </figure>
-
-              <div class="life-photo-placeholder">
-                <span id="placeholderOneTag"></span>
-                <strong id="placeholderOneTitle"></strong>
-              </div>
-
-              <div class="life-photo-placeholder">
-                <span id="placeholderTwoTag"></span>
-                <strong id="placeholderTwoTitle"></strong>
-              </div>
+              <figure class="gallery-photo">
+                <img src="./生活照1.HEIC.png" alt="Golf photo" />
+              </figure>
             </div>
           </div>
         </section>
 
-        <section class="section contact-section" id="contact">
-          <div class="section-marker">
-            <span>05</span>
-            <p id="contactEyebrow"></p>
+        <section class="section section-contact" id="contact">
+          <div class="section-head">
+            <span>04</span>
+            <h2 id="contactTitle"></h2>
           </div>
-          <div class="section-shell contact-shell">
-            <h2 class="section-title" id="contactTitle"></h2>
-            <div class="section-content">
-              <p class="section-lead" id="contactBody"></p>
 
-              <div class="contact-lines">
-                <a class="contact-line" href="mailto:160423ydn@gmail.com">
-                  <span id="contactEmailLabel"></span>
-                  <strong>160423ydn@gmail.com</strong>
-                </a>
-                <a class="contact-line" href="tel:+8617665011604">
-                  <span id="contactPhoneLabel"></span>
-                  <strong>+86 17665011604</strong>
-                </a>
-                <div class="contact-line">
-                  <span id="contactLocationLabel"></span>
-                  <strong>Shenzhen / Guangzhou</strong>
-                </div>
-              </div>
+          <div class="contact-grid">
+            <a class="contact-item" href="mailto:160423ydn@gmail.com">
+              <span id="contactEmailLabel"></span>
+              <strong>160423ydn@gmail.com</strong>
+            </a>
+            <a class="contact-item" href="tel:+8617665011604">
+              <span id="contactPhoneLabel"></span>
+              <strong>+86 17665011604</strong>
+            </a>
+            <div class="contact-item">
+              <span id="contactLocationLabel"></span>
+              <strong id="contactLocationValue"></strong>
             </div>
           </div>
         </section>
