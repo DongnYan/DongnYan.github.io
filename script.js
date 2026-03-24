@@ -35,24 +35,27 @@ const content = {
         logo: "./投控东海.JPG",
         company: "深圳市投控东海投资有限公司",
         department: "并购业务部 实习",
-        meta: "深圳 / 2026.03 - 至今",
+        time: "2026.03 - 至今",
+        location: "深圳",
       },
       {
         logo: "./五矿证券.jpg",
         company: "五矿证券",
         department: "研究所新能源组 实习",
-        meta: "深圳 / 2025.05 - 2025.08",
+        time: "2025.05 - 2025.08",
+        location: "深圳",
       },
       {
         logo: "./嘉实国际投资.jpg",
         company: "嘉实国际投资",
         department: "战略市场部 实习",
-        meta: "香港 / 2024.07 - 2024.08",
+        time: "2024.07 - 2024.08",
+        location: "香港",
       },
     ],
     hobbies: [
-      "篮球：学院篮球队",
-      "摄影：视觉中国签约摄影师",
+      "学院篮球队",
+      "视觉中国签约摄影师",
       "影视剧",
       "健身",
       "高尔夫",
@@ -77,8 +80,8 @@ const content = {
       contact: "Contact",
     },
     hero: {
-      title: "Dongning (Don) Yan",
-      subtitle: "颜东宁",
+      title: "颜东宁",
+      subtitle: "Dongning (Don) Yan",
     },
     profile: {
       dualDegreeLabel: "Dual Bachelor's Degrees",
@@ -101,30 +104,33 @@ const content = {
     internships: [
       {
         logo: "./投控东海.JPG",
-        company: "Shenzhen Topsocend Capital Co., Ltd.",
-        department: "M&A Division Intern",
-        meta: "Shenzhen / Mar 2026 - Present",
+        company: "Toposcend Capital",
+        department: "M&A",
+        time: "Mar 2026 - Present",
+        location: "Shenzhen",
       },
       {
         logo: "./五矿证券.jpg",
         company: "Minmetals Securities",
-        department: "New Energy Research Group Intern",
-        meta: "Shenzhen / May 2025 - Aug 2025",
+        department: "Research Institute",
+        time: "May 2025 - Aug 2025",
+        location: "Shenzhen",
       },
       {
         logo: "./嘉实国际投资.jpg",
-        company: "Harvest Global Capital Investments Limited",
-        department: "Strategic Marketing Department Intern",
-        meta: "Hong Kong / Jul 2024 - Aug 2024",
+        company: "Harvest Global Capital Investments",
+        department: "Strategic Marketing Department",
+        time: "Jul 2024 - Aug 2024",
+        location: "Hong Kong",
       },
     ],
     hobbies: [
-      "Basketball: college team",
-      "Photography: signed photographer on Visual China",
-      "Film and television series",
+      "College Basketball Team",
+      "Signed Photographer on Visual China",
+      "Film and Television Series",
       "Fitness",
       "Golf",
-      "Flag football",
+      "Flag Football",
     ],
     contact: {
       labels: {
@@ -160,7 +166,10 @@ function renderInternships(items) {
             <h3>${item.company}</h3>
             <p>${item.department}</p>
           </div>
-          <p class="internship-meta">${item.meta}</p>
+          <div class="internship-meta">
+            <span class="internship-time">${item.time}</span>
+            <span class="internship-location">${item.location}</span>
+          </div>
         </article>
       `,
     )
@@ -216,8 +225,6 @@ function render(lang) {
 
   setText("contactEmailLabel", text.contact.labels.email);
   setText("contactPhoneLabel", text.contact.labels.phone);
-  setText("contactLocationLabel", text.contact.labels.location);
-  setText("contactLocationValue", text.contact.location);
 
   langButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.setLang === lang);

@@ -183,10 +183,10 @@ ul {
 }
 
 .name-en {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.24vw, 1.12rem);
-  line-height: 1.32;
+  margin-top: 0;
+  color: var(--accent);
+  font-size: clamp(1.84rem, 3.4vw, 2.48rem);
+  line-height: 1.02;
 }
 
 .intro-media {
@@ -210,16 +210,18 @@ ul {
 }
 
 .identity-block {
-  display: grid;
-  gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
   padding-bottom: 18px;
   border-bottom: 1px solid var(--line);
 }
 
 .intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.44fr) minmax(240px, 0.56fr);
-  gap: 22px 44px;
+  grid-template-columns: 1fr;
+  gap: 22px;
   align-items: start;
 }
 
@@ -284,8 +286,7 @@ ul {
 
 .school-row p,
 .text-stack p,
-.internship-text p,
-.hobby-list li {
+.internship-text p {
   color: var(--muted);
   line-height: 1.85;
 }
@@ -305,17 +306,13 @@ ul {
 .text-row {
   display: grid;
   gap: 10px;
-  padding: 2px 0 10px;
+  padding: 8px 0 10px;
   border-bottom: 1px solid var(--line);
 }
 
 .text-stack {
   display: grid;
   gap: 10px;
-}
-
-.intro-notes {
-  padding-top: 32px;
 }
 
 .content-section {
@@ -358,11 +355,24 @@ ul {
 }
 
 .internship-meta {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+  text-align: right;
+}
+
+.internship-time {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.internship-location {
   color: var(--muted);
   font-size: 0.95rem;
-  line-height: 1.8;
-  text-align: right;
-  white-space: nowrap;
+  line-height: 1.55;
 }
 
 .hobbies-shell {
@@ -378,28 +388,36 @@ ul {
 }
 
 .hobby-list li {
+  color: var(--text);
   padding: 0 0 12px;
   border-bottom: 1px solid var(--line);
 }
 
 .hobby-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 18px;
+  align-items: stretch;
+}
+
+.gallery-photo {
+  flex: 1 1 0;
 }
 
 .gallery-photo img {
   width: 100%;
-  min-height: 290px;
-  height: 100%;
+  height: 290px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: var(--shadow);
   background: var(--surface);
 }
 
+.gallery-photo-card {
+  flex: 1.34 1.34 0;
+}
+
 .gallery-photo-card img {
-  min-height: 290px;
+  height: 290px;
   object-fit: contain;
   background: #ffffff;
   padding: 16px;
@@ -412,9 +430,10 @@ ul {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(220px, max-content));
   gap: 28px;
   border-top: 1px solid var(--line-strong);
+  justify-content: end;
 }
 
 .contact-item {
@@ -463,18 +482,14 @@ ul {
     gap: 18px 28px;
   }
 
-  .intro-notes {
-    padding-top: 0;
-  }
-
   .internship-item {
     grid-template-columns: 92px minmax(0, 1fr);
   }
 
   .internship-meta {
     grid-column: 2;
-    text-align: left;
-    white-space: normal;
+    justify-items: end;
+    text-align: right;
   }
 }
 
@@ -496,7 +511,8 @@ ul {
     width: min(100%, 220px);
   }
 
-  .name-cn {
+  .name-cn,
+  .name-en {
     font-size: clamp(1.88rem, 11vw, 2.48rem);
   }
 
@@ -537,11 +553,18 @@ ul {
     white-space: normal;
   }
 
+  .internship-meta {
+    grid-column: 1;
+    justify-items: end;
+    text-align: right;
+  }
+
   .gallery-photo img {
-    min-height: 250px;
+    height: 250px;
   }
 
   .hobby-gallery {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }
