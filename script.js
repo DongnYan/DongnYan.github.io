@@ -32,13 +32,6 @@ const content = {
     },
     internships: [
       {
-        logo: "./平安银行.jpg",
-        company: "平安银行深圳分行",
-        department: "零售贷款部 实习",
-        time: "01/2024 - 02/2024",
-        location: "深圳",
-      },
-      {
         logo: "./投控东海.JPG",
         company: "深圳市投控东海投资有限公司",
         department: "并购业务部 实习",
@@ -58,6 +51,13 @@ const content = {
         department: "战略市场部 实习",
         time: "2024.07 - 2024.08",
         location: "香港",
+      },
+      {
+        logo: "./平安银行.jpg",
+        company: "平安银行深圳分行",
+        department: "零售贷款部 实习",
+        time: "01/2024 - 02/2024",
+        location: "深圳",
       },
     ],
     hobbies: [
@@ -110,13 +110,6 @@ const content = {
     },
     internships: [
       {
-        logo: "./平安银行.jpg",
-        company: "Ping An Bank Co., Ltd. Shenzhen Branch",
-        department: "Retail Loan Department",
-        time: "01/2024 - 02/2024",
-        location: "Shenzhen",
-      },
-      {
         logo: "./投控东海.JPG",
         company: "Toposcend Capital",
         department: "M&A",
@@ -136,6 +129,13 @@ const content = {
         department: "Strategic Marketing Department",
         time: "Jul 2024 - Aug 2024",
         location: "Hong Kong",
+      },
+      {
+        logo: "./平安银行.jpg",
+        company: "Ping An Bank Co., Ltd. Shenzhen Branch",
+        department: "Retail Loan Department",
+        time: "01/2024 - 02/2024",
+        location: "Shenzhen",
       },
     ],
     hobbies: [
