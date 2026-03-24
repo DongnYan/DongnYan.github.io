@@ -416,34 +416,26 @@ ul {
 }
 
 .hobby-gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.22fr);
   gap: 18px;
   align-items: stretch;
 }
 
-.gallery-photo {
-  flex: 1 1 0;
-}
-
 .gallery-photo img {
   width: 100%;
-  height: 290px;
+  height: 300px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: var(--shadow);
   background: var(--surface);
 }
 
-.gallery-photo-card {
-  flex: 1.34 1.34 0;
-}
-
 .gallery-photo-card img {
-  height: 290px;
-  object-fit: contain;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 18%;
   background: #ffffff;
-  padding: 16px;
-  border: 1px solid var(--line);
 }
 
 .contact-section {
@@ -604,5 +596,9 @@ ul {
   .hobby-gallery {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .gallery-photo-card img {
+    object-position: center 16%;
   }
 }
