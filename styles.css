@@ -164,7 +164,7 @@ ul {
   display: grid;
   grid-template-columns: minmax(210px, 252px) minmax(0, 1fr);
   gap: clamp(28px, 4vw, 58px);
-  align-items: center;
+  align-items: start;
   padding: 8px 0 20px;
   min-height: calc(100svh - 112px);
 }
@@ -192,6 +192,8 @@ ul {
 .intro-media {
   width: min(100%, 248px);
   justify-self: start;
+  align-self: start;
+  padding-top: 78px;
 }
 
 .hero-photo {
@@ -265,7 +267,7 @@ ul {
 .school-mark-dual {
   width: auto;
   grid-template-columns: repeat(2, auto);
-  gap: 10px;
+  gap: 18px;
 }
 
 .school-mark-dual img {
@@ -286,9 +288,13 @@ ul {
 }
 
 .school-row p,
-.text-stack p,
 .internship-text p {
   color: var(--muted);
+  line-height: 1.85;
+}
+
+.text-row .text-stack p {
+  color: var(--text);
   line-height: 1.85;
 }
 
@@ -479,6 +485,10 @@ ul {
     gap: 24px;
   }
 
+  .intro-media {
+    padding-top: 0;
+  }
+
   .intro-grid {
     gap: 18px 28px;
   }
@@ -543,7 +553,7 @@ ul {
 
   .school-mark-dual {
     grid-template-columns: repeat(2, auto);
-    gap: 8px;
+    gap: 12px;
   }
 
   .school-mark-dual img {
