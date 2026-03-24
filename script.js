@@ -10,20 +10,30 @@ const content = {
     },
     hero: {
       title: "颜东宁",
-      subtitle: "Dongning Yan",
+      subtitle: "Dongning (Don) Yan",
     },
     profile: {
       dualDegreeLabel: "本科双学位",
-      szuDegree: "经济学学士 金融科技专业 2022 - 2026",
-      audenciaDegree: "理学学士 金融科技专业 2022 - 2026",
+      szuName: "深圳大学",
+      szuDegree: "经济学学士 · 金融科技专业",
+      szuTime: "2022 - 2026",
+      audenciaName: "Audencia Business School",
+      audenciaDegree: "理学学士 · 金融科技专业",
+      audenciaTime: "2022 - 2026",
+      exchangeLabel: "法国交换",
+      exchangeSchools: "Audencia Business School × Centrale Nantes",
+      exchangeProgram: "工商管理项目",
+      exchangeTime: "2025.09 - 2025.12",
       coreCoursesLabel: "核心课程",
-      coreCoursesText:
-        "公司金融、金融科技导论、金融计量学、投资管理、金融风险管理、计量经济学、人工智能与机器学习、数据库系统等",
-      exchangeLabel: "交换项目",
-      exchangeText:
-        "Audencia Business School – Centrale Nantes 工商管理项目 交换 2025.09 - 2025.12。核心课程：大数据分析、供应链管理、国际贸易运营、工业 BI 等",
-      ieltsLabel: "语言成绩",
-      ieltsText: "雅思 7.5 分",
+      coreCoursesMain:
+        "金融科技：公司金融、金融科技导论、金融计量学、投资管理、金融风险管理、计量经济学、人工智能与机器学习、数据库系统等",
+      coreCoursesExchange:
+        "法国交换：大数据分析、供应链管理、国际贸易运营、工业 BI 等",
+      skillsLabel: "专业技能",
+      programmingSkills: "编程能力：Python（数据分析、机器学习）、SQL",
+      toolSkills:
+        "通用与金融工具：Microsoft Office（PPT、Word、Excel）、Wind、Bloomberg",
+      languageSkills: "语言：雅思 7.5 分",
     },
     internships: [
       {
@@ -63,8 +73,8 @@ const content = {
     },
   },
   en: {
-    metaTitle: "Dongning Yan | Personal Website",
-    metaDescription: "Bilingual personal website for Dongning Yan.",
+    metaTitle: "Dongning (Don) Yan | Personal Website",
+    metaDescription: "Bilingual personal website for Dongning (Don) Yan.",
     nav: {
       profile: "Profile",
       internships: "Internships",
@@ -72,21 +82,31 @@ const content = {
       contact: "Contact",
     },
     hero: {
-      title: "Dongning Yan",
+      title: "Dongning (Don) Yan",
       subtitle: "颜东宁",
     },
     profile: {
       dualDegreeLabel: "Dual Bachelor's Degrees",
-      szuDegree: "Bachelor of Economics in Financial Technology, 2022 - 2026",
-      audenciaDegree: "Bachelor of Science in Financial Technology, 2022 - 2026",
+      szuName: "Shenzhen University",
+      szuDegree: "Bachelor of Economics · Financial Technology",
+      szuTime: "2022 - 2026",
+      audenciaName: "Audencia Business School",
+      audenciaDegree: "Bachelor of Science · Financial Technology",
+      audenciaTime: "2022 - 2026",
+      exchangeLabel: "France Exchange",
+      exchangeSchools: "Audencia Business School × Centrale Nantes",
+      exchangeProgram: "Business Administration Program",
+      exchangeTime: "Sep 2025 - Dec 2025",
       coreCoursesLabel: "Core Courses",
-      coreCoursesText:
-        "Corporate Finance, Introduction to FinTech, Financial Econometrics, Investment Management, Financial Risk Management, Econometrics, Artificial Intelligence and Machine Learning, Database Systems, etc.",
-      exchangeLabel: "Exchange Program",
-      exchangeText:
-        "Audencia Business School - Centrale Nantes Business Administration Program, Exchange Sep 2025 - Dec 2025. Core courses: Big Data Analytics, Supply Chain Management, International Trade Operations, Industrial BI, etc.",
-      ieltsLabel: "Language Score",
-      ieltsText: "IELTS 7.5",
+      coreCoursesMain:
+        "Financial Technology: Corporate Finance, Introduction to FinTech, Financial Econometrics, Investment Management, Financial Risk Management, Econometrics, Artificial Intelligence and Machine Learning, Database Systems.",
+      coreCoursesExchange:
+        "France Exchange: Big Data Analytics, Supply Chain Management, International Trade Operations, Industrial BI.",
+      skillsLabel: "Professional Skills",
+      programmingSkills: "Programming: Python (data analysis, machine learning), SQL",
+      toolSkills:
+        "General & Finance Tools: Microsoft Office (PPT, Word, Excel), Wind, Bloomberg",
+      languageSkills: "Language: IELTS 7.5",
     },
     internships: [
       {
@@ -186,14 +206,23 @@ function render(lang) {
   setText("heroSubtitle", text.hero.subtitle);
 
   setText("dualDegreeLabel", text.profile.dualDegreeLabel);
+  setText("szuName", text.profile.szuName);
   setText("szuDegree", text.profile.szuDegree);
+  setText("szuTime", text.profile.szuTime);
+  setText("audenciaName", text.profile.audenciaName);
   setText("audenciaDegree", text.profile.audenciaDegree);
-  setText("coreCoursesLabel", text.profile.coreCoursesLabel);
-  setText("coreCoursesText", text.profile.coreCoursesText);
+  setText("audenciaTime", text.profile.audenciaTime);
   setText("exchangeLabel", text.profile.exchangeLabel);
-  setText("exchangeText", text.profile.exchangeText);
-  setText("ieltsLabel", text.profile.ieltsLabel);
-  setText("ieltsText", text.profile.ieltsText);
+  setText("exchangeSchools", text.profile.exchangeSchools);
+  setText("exchangeProgram", text.profile.exchangeProgram);
+  setText("exchangeTime", text.profile.exchangeTime);
+  setText("coreCoursesLabel", text.profile.coreCoursesLabel);
+  setText("coreCoursesMain", text.profile.coreCoursesMain);
+  setText("coreCoursesExchange", text.profile.coreCoursesExchange);
+  setText("skillsLabel", text.profile.skillsLabel);
+  setText("programmingSkills", text.profile.programmingSkills);
+  setText("toolSkills", text.profile.toolSkills);
+  setText("languageSkills", text.profile.languageSkills);
 
   renderInternships(text.internships);
   renderHobbies(text.hobbies);

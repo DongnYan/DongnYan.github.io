@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>颜东宁 | Dongning Yan</title>
-    <meta name="description" content="Bilingual personal website for Dongning Yan." />
+    <title>颜东宁 | Dongning (Don) Yan</title>
+    <meta name="description" content="Bilingual personal website for Dongning (Don) Yan." />
     <meta name="theme-color" content="#072f49" />
-    <meta property="og:title" content="颜东宁 | Dongning Yan" />
-    <meta property="og:description" content="Bilingual personal website for Dongning Yan." />
+    <meta property="og:title" content="颜东宁 | Dongning (Don) Yan" />
+    <meta property="og:description" content="Bilingual personal website for Dongning (Don) Yan." />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,7 @@
         <section class="intro" id="profile" data-section="profile">
           <div class="intro-panel">
             <figure class="intro-media">
-              <img class="hero-photo" src="./1.jpg" alt="Portrait of Dongning Yan" />
+              <img class="hero-photo" src="./1.jpg" alt="Portrait of Dongning (Don) Yan" />
             </figure>
 
             <div class="intro-main">
@@ -51,36 +51,58 @@
                   <p class="inline-label" id="dualDegreeLabel"></p>
 
                   <article class="school-row">
-                    <img src="./深圳大学校徽.jpg" alt="Shenzhen University logo" />
-                    <div>
-                      <h2>深圳大学</h2>
+                    <div class="school-mark">
+                      <img src="./深圳大学校徽.jpg" alt="Shenzhen University logo" />
+                    </div>
+                    <div class="school-copy">
+                      <h2 id="szuName"></h2>
                       <p id="szuDegree"></p>
                     </div>
+                    <p class="school-time" id="szuTime"></p>
                   </article>
 
                   <article class="school-row">
-                    <img src="./Audencia校徽.jpg" alt="Audencia logo" />
-                    <div>
-                      <h2>Audencia Business School</h2>
+                    <div class="school-mark">
+                      <img src="./Audencia校徽.jpg" alt="Audencia logo" />
+                    </div>
+                    <div class="school-copy">
+                      <h2 id="audenciaName"></h2>
                       <p id="audenciaDegree"></p>
                     </div>
+                    <p class="school-time" id="audenciaTime"></p>
+                  </article>
+
+                  <p class="inline-label" id="exchangeLabel"></p>
+
+                  <article class="school-row school-row-joint">
+                    <div class="school-mark school-mark-dual">
+                      <img src="./Audencia校徽.jpg" alt="Audencia logo" />
+                      <img src="./Centrale Nantes校徽.jpg" alt="Centrale Nantes logo" />
+                    </div>
+                    <div class="school-copy">
+                      <h2 id="exchangeSchools"></h2>
+                      <p id="exchangeProgram"></p>
+                    </div>
+                    <p class="school-time" id="exchangeTime"></p>
                   </article>
                 </div>
 
                 <div class="intro-column intro-notes">
                   <div class="text-row">
                     <p class="inline-label" id="coreCoursesLabel"></p>
-                    <p id="coreCoursesText"></p>
+                    <div class="text-stack">
+                      <p id="coreCoursesMain"></p>
+                      <p id="coreCoursesExchange"></p>
+                    </div>
                   </div>
 
                   <div class="text-row">
-                    <p class="inline-label" id="exchangeLabel"></p>
-                    <p id="exchangeText"></p>
-                  </div>
-
-                  <div class="text-row">
-                    <p class="inline-label" id="ieltsLabel"></p>
-                    <p id="ieltsText"></p>
+                    <p class="inline-label" id="skillsLabel"></p>
+                    <div class="text-stack">
+                      <p id="programmingSkills"></p>
+                      <p id="toolSkills"></p>
+                      <p id="languageSkills"></p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -102,6 +124,9 @@
               </figure>
               <figure class="gallery-photo">
                 <img src="./生活照1.HEIC.png" alt="Golf photo" />
+              </figure>
+              <figure class="gallery-photo gallery-photo-card">
+                <img src="./视觉中国摄影师.JPG" alt="Visual China photographer card" />
               </figure>
             </div>
           </div>

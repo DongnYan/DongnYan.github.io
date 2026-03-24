@@ -63,7 +63,7 @@ ul {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 24px;
   width: 100%;
@@ -83,7 +83,8 @@ ul {
 
 .nav-links {
   display: flex;
-  justify-content: flex-start;
+  grid-column: 2;
+  justify-content: center;
   gap: 28px;
 }
 
@@ -121,6 +122,8 @@ ul {
 
 .lang-switch {
   display: inline-flex;
+  grid-column: 3;
+  justify-self: end;
   padding: 4px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -211,7 +214,7 @@ ul {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.98fr) minmax(320px, 1.02fr);
+  grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
   gap: 22px 34px;
 }
 
@@ -232,17 +235,40 @@ ul {
 
 .school-row {
   display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 16px 18px;
+  align-items: start;
   padding: 14px 0 12px;
   border-bottom: 1px solid var(--line);
 }
 
-.school-row img {
+.school-mark {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  min-height: 60px;
+}
+
+.school-mark img {
   width: 60px;
   height: 60px;
   object-fit: contain;
+}
+
+.school-mark-dual {
+  width: auto;
+  grid-template-columns: repeat(2, 50px);
+  gap: 10px;
+}
+
+.school-mark-dual img {
+  width: 50px;
+  height: 50px;
+}
+
+.school-copy {
+  display: grid;
+  gap: 4px;
 }
 
 .school-row h2 {
@@ -251,11 +277,20 @@ ul {
 }
 
 .school-row p,
-.text-row p:last-child,
+.text-stack p,
 .internship-text p,
 .hobby-list li {
   color: var(--muted);
   line-height: 1.85;
+}
+
+.school-time {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  align-self: start;
 }
 
 .text-row {
@@ -263,6 +298,11 @@ ul {
   gap: 10px;
   padding: 2px 0 10px;
   border-bottom: 1px solid var(--line);
+}
+
+.text-stack {
+  display: grid;
+  gap: 10px;
 }
 
 .content-section {
@@ -344,6 +384,17 @@ ul {
   background: var(--surface);
 }
 
+.gallery-photo-card {
+  grid-column: 1 / -1;
+}
+
+.gallery-photo-card img {
+  min-height: 250px;
+  object-fit: contain;
+  background: linear-gradient(180deg, #ffffff, var(--surface));
+  padding: 18px;
+}
+
 .contact-section {
   padding-bottom: 84px;
 }
@@ -374,7 +425,12 @@ ul {
   }
 
   .nav-links {
+    grid-column: 1;
     display: none;
+  }
+
+  .lang-switch {
+    grid-column: 2;
   }
 
   .intro-panel,
@@ -440,14 +496,32 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .school-row img,
+  .school-mark img,
   .internship-logo {
     width: 60px;
     height: 60px;
   }
 
+  .school-mark-dual {
+    grid-template-columns: repeat(2, 44px);
+    gap: 8px;
+  }
+
+  .school-mark-dual img {
+    width: 44px;
+    height: 44px;
+  }
+
   .school-row {
     gap: 12px;
+  }
+
+  .school-time {
+    white-space: normal;
+  }
+
+  .gallery-photo-card {
+    grid-column: auto;
   }
 
   .gallery-photo img {
