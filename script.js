@@ -16,19 +16,14 @@ const content = {
       dualDegreeLabel: "本科双学位",
       szuName: "深圳大学",
       szuDegree: "经济学学士 · 金融科技专业",
-      szuTime: "2022 - 2026",
+      szuTime: "2022.09 - 2026.07",
       audenciaName: "Audencia Business School",
       audenciaDegree: "理学学士 · 金融科技专业",
-      audenciaTime: "2022 - 2026",
+      audenciaTime: "2022.09 - 2026.07",
       exchangeLabel: "法国交换",
       exchangeSchools: "Audencia Business School × Centrale Nantes",
-      exchangeProgram: "工商管理项目",
+      exchangeProgram: "工商管理项目 BBA Data, AI & Management",
       exchangeTime: "2025.09 - 2025.12",
-      coreCoursesLabel: "核心课程",
-      coreCoursesMain:
-        "金融科技：公司金融、金融科技导论、金融计量学、投资管理、金融风险管理、计量经济学、人工智能与机器学习、数据库系统等",
-      coreCoursesExchange:
-        "法国交换：大数据分析、供应链管理、国际贸易运营、工业 BI 等",
       skillsLabel: "专业技能",
       programmingSkills: "编程能力：Python（数据分析、机器学习）、SQL",
       toolSkills:
@@ -89,19 +84,14 @@ const content = {
       dualDegreeLabel: "Dual Bachelor's Degrees",
       szuName: "Shenzhen University",
       szuDegree: "Bachelor of Economics · Financial Technology",
-      szuTime: "2022 - 2026",
+      szuTime: "Sep 2022 - Jul 2026",
       audenciaName: "Audencia Business School",
       audenciaDegree: "Bachelor of Science · Financial Technology",
-      audenciaTime: "2022 - 2026",
+      audenciaTime: "Sep 2022 - Jul 2026",
       exchangeLabel: "France Exchange",
       exchangeSchools: "Audencia Business School × Centrale Nantes",
-      exchangeProgram: "Business Administration Program",
+      exchangeProgram: "BBA Data, AI & Management",
       exchangeTime: "Sep 2025 - Dec 2025",
-      coreCoursesLabel: "Core Courses",
-      coreCoursesMain:
-        "Financial Technology: Corporate Finance, Introduction to FinTech, Financial Econometrics, Investment Management, Financial Risk Management, Econometrics, Artificial Intelligence and Machine Learning, Database Systems.",
-      coreCoursesExchange:
-        "France Exchange: Big Data Analytics, Supply Chain Management, International Trade Operations, Industrial BI.",
       skillsLabel: "Professional Skills",
       programmingSkills: "Programming: Python (data analysis, machine learning), SQL",
       toolSkills:
@@ -216,9 +206,6 @@ function render(lang) {
   setText("exchangeSchools", text.profile.exchangeSchools);
   setText("exchangeProgram", text.profile.exchangeProgram);
   setText("exchangeTime", text.profile.exchangeTime);
-  setText("coreCoursesLabel", text.profile.coreCoursesLabel);
-  setText("coreCoursesMain", text.profile.coreCoursesMain);
-  setText("coreCoursesExchange", text.profile.coreCoursesExchange);
   setText("skillsLabel", text.profile.skillsLabel);
   setText("programmingSkills", text.profile.programmingSkills);
   setText("toolSkills", text.profile.toolSkills);
@@ -240,26 +227,23 @@ function render(lang) {
 }
 
 function updateActiveNav() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+  let currentId = sections[0]?.dataset.section;
+  const headerOffset = 160;
+  const pageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
 
-        const id = entry.target.dataset.section;
-        navLinks.forEach((link) => {
-          link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
-        });
-      });
-    },
-    {
-      threshold: 0.24,
-      rootMargin: "-18% 0px -60% 0px",
-    },
-  );
+  sections.forEach((section) => {
+    if (window.scrollY + headerOffset >= section.offsetTop) {
+      currentId = section.dataset.section;
+    }
+  });
 
-  sections.forEach((section) => observer.observe(section));
+  if (pageBottom && sections.length) {
+    currentId = sections[sections.length - 1].dataset.section;
+  }
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${currentId}`);
+  });
 }
 
 let ticking = false;
@@ -278,12 +262,17 @@ window.addEventListener(
   "scroll",
   () => {
     if (!ticking) {
-      window.requestAnimationFrame(updatePhotoOffset);
+      window.requestAnimationFrame(() => {
+        updatePhotoOffset();
+        updateActiveNav();
+      });
       ticking = true;
     }
   },
   { passive: true },
 );
+
+window.addEventListener("resize", updateActiveNav);
 
 langButtons.forEach((button) => {
   button.addEventListener("click", () => {
