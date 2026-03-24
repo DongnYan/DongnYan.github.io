@@ -417,7 +417,7 @@ ul {
 
 .hobby-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.22fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
   gap: 18px;
   align-items: stretch;
 }
@@ -431,11 +431,19 @@ ul {
   background: var(--surface);
 }
 
+.gallery-photo-card {
+  width: fit-content;
+  justify-self: start;
+}
+
 .gallery-photo-card img {
+  width: auto;
+  max-width: min(100%, 320px);
   height: 300px;
-  object-fit: cover;
-  object-position: center 18%;
+  object-fit: contain;
+  object-position: center center;
   background: #ffffff;
+  border: 1px solid var(--line);
 }
 
 .contact-section {
@@ -599,6 +607,9 @@ ul {
   }
 
   .gallery-photo-card img {
-    object-position: center 16%;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: 340px;
   }
 }
