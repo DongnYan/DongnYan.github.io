@@ -2,7 +2,6 @@ const content = {
   zh: {
     metaTitle: "颜东宁 | 个人主页",
     metaDescription: "颜东宁的中英双语个人主页。",
-    brandSubtitle: "Dongning Yan / Personal Website",
     nav: {
       profile: "简介",
       internships: "实习经历",
@@ -11,10 +10,9 @@ const content = {
     },
     hero: {
       title: "颜东宁",
-      subtitle: "深圳大学金融科技专业本科双学位学生",
+      subtitle: "Dongning Yan",
     },
     profile: {
-      title: "简介",
       dualDegreeLabel: "本科双学位",
       szuDegree: "经济学学士 金融科技专业 2022 - 2026",
       audenciaDegree: "理学学士 金融科技专业 2022 - 2026",
@@ -27,42 +25,35 @@ const content = {
       ieltsLabel: "语言成绩",
       ieltsText: "雅思 7.5 分",
     },
-    internships: {
-      title: "实习经历",
-      items: [
-        {
-          logo: "./投控东海.JPG",
-          company: "深圳市投控东海投资有限公司",
-          department: "并购业务部 实习",
-          meta: "深圳 / 2026.03 - 至今",
-        },
-        {
-          logo: "./五矿证券.jpg",
-          company: "五矿证券",
-          department: "研究所新能源组 实习",
-          meta: "深圳 / 2025.05 - 2025.08",
-        },
-        {
-          logo: "./嘉实国际投资.jpg",
-          company: "嘉实国际投资",
-          department: "战略市场部 实习",
-          meta: "香港 / 2024.07 - 2024.08",
-        },
-      ],
-    },
-    hobbies: {
-      title: "爱好",
-      items: [
-        "篮球：学院篮球队",
-        "摄影：视觉中国签约摄影师",
-        "影视剧",
-        "健身",
-        "高尔夫",
-        "腰旗橄榄球",
-      ],
-    },
+    internships: [
+      {
+        logo: "./投控东海.JPG",
+        company: "深圳市投控东海投资有限公司",
+        department: "并购业务部 实习",
+        meta: "深圳 / 2026.03 - 至今",
+      },
+      {
+        logo: "./五矿证券.jpg",
+        company: "五矿证券",
+        department: "研究所新能源组 实习",
+        meta: "深圳 / 2025.05 - 2025.08",
+      },
+      {
+        logo: "./嘉实国际投资.jpg",
+        company: "嘉实国际投资",
+        department: "战略市场部 实习",
+        meta: "香港 / 2024.07 - 2024.08",
+      },
+    ],
+    hobbies: [
+      "篮球：学院篮球队",
+      "摄影：视觉中国签约摄影师",
+      "影视剧",
+      "健身",
+      "高尔夫",
+      "腰旗橄榄球",
+    ],
     contact: {
-      title: "联系",
       labels: {
         email: "邮箱",
         phone: "电话 / 微信",
@@ -74,7 +65,6 @@ const content = {
   en: {
     metaTitle: "Dongning Yan | Personal Website",
     metaDescription: "Bilingual personal website for Dongning Yan.",
-    brandSubtitle: "颜东宁 / Personal Website",
     nav: {
       profile: "Profile",
       internships: "Internships",
@@ -83,10 +73,9 @@ const content = {
     },
     hero: {
       title: "Dongning Yan",
-      subtitle: "Undergraduate student in Financial Technology at Shenzhen University",
+      subtitle: "颜东宁",
     },
     profile: {
-      title: "Profile",
       dualDegreeLabel: "Dual Bachelor's Degrees",
       szuDegree: "Bachelor of Economics in Financial Technology, 2022 - 2026",
       audenciaDegree: "Bachelor of Science in Financial Technology, 2022 - 2026",
@@ -99,42 +88,35 @@ const content = {
       ieltsLabel: "Language Score",
       ieltsText: "IELTS 7.5",
     },
-    internships: {
-      title: "Internships",
-      items: [
-        {
-          logo: "./投控东海.JPG",
-          company: "Shenzhen Topsocend Capital Co., Ltd.",
-          department: "M&A Division Intern",
-          meta: "Shenzhen / Mar 2026 - Present",
-        },
-        {
-          logo: "./五矿证券.jpg",
-          company: "Minmetals Securities",
-          department: "New Energy Research Group Intern",
-          meta: "Shenzhen / May 2025 - Aug 2025",
-        },
-        {
-          logo: "./嘉实国际投资.jpg",
-          company: "Harvest Global Capital Investments Limited",
-          department: "Strategic Marketing Department Intern",
-          meta: "Hong Kong / Jul 2024 - Aug 2024",
-        },
-      ],
-    },
-    hobbies: {
-      title: "Hobbies",
-      items: [
-        "Basketball: college team",
-        "Photography: signed photographer on Visual China",
-        "Film and television series",
-        "Fitness",
-        "Golf",
-        "Flag football",
-      ],
-    },
+    internships: [
+      {
+        logo: "./投控东海.JPG",
+        company: "Shenzhen Topsocend Capital Co., Ltd.",
+        department: "M&A Division Intern",
+        meta: "Shenzhen / Mar 2026 - Present",
+      },
+      {
+        logo: "./五矿证券.jpg",
+        company: "Minmetals Securities",
+        department: "New Energy Research Group Intern",
+        meta: "Shenzhen / May 2025 - Aug 2025",
+      },
+      {
+        logo: "./嘉实国际投资.jpg",
+        company: "Harvest Global Capital Investments Limited",
+        department: "Strategic Marketing Department Intern",
+        meta: "Hong Kong / Jul 2024 - Aug 2024",
+      },
+    ],
+    hobbies: [
+      "Basketball: college team",
+      "Photography: signed photographer on Visual China",
+      "Film and television series",
+      "Fitness",
+      "Golf",
+      "Flag football",
+    ],
     contact: {
-      title: "Contact",
       labels: {
         email: "Email",
         phone: "Phone / WeChat",
@@ -146,6 +128,9 @@ const content = {
 };
 
 const langButtons = document.querySelectorAll("[data-set-lang]");
+const navLinks = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("[data-section]");
+const heroPhoto = document.querySelector(".hero-photo");
 
 function setText(id, value) {
   const element = document.getElementById(id);
@@ -192,7 +177,6 @@ function render(lang) {
     .querySelector('meta[property="og:description"]')
     .setAttribute("content", text.metaDescription);
 
-  setText("brandSubtitle", text.brandSubtitle);
   setText("navProfile", text.nav.profile);
   setText("navInternships", text.nav.internships);
   setText("navHobbies", text.nav.hobbies);
@@ -201,7 +185,6 @@ function render(lang) {
   setText("heroTitle", text.hero.title);
   setText("heroSubtitle", text.hero.subtitle);
 
-  setText("profileTitle", text.profile.title);
   setText("dualDegreeLabel", text.profile.dualDegreeLabel);
   setText("szuDegree", text.profile.szuDegree);
   setText("audenciaDegree", text.profile.audenciaDegree);
@@ -212,13 +195,9 @@ function render(lang) {
   setText("ieltsLabel", text.profile.ieltsLabel);
   setText("ieltsText", text.profile.ieltsText);
 
-  setText("internshipsTitle", text.internships.title);
-  renderInternships(text.internships.items);
+  renderInternships(text.internships);
+  renderHobbies(text.hobbies);
 
-  setText("hobbiesTitle", text.hobbies.title);
-  renderHobbies(text.hobbies.items);
-
-  setText("contactTitle", text.contact.title);
   setText("contactEmailLabel", text.contact.labels.email);
   setText("contactPhoneLabel", text.contact.labels.phone);
   setText("contactLocationLabel", text.contact.labels.location);
@@ -231,6 +210,52 @@ function render(lang) {
   localStorage.setItem("site-lang", lang);
 }
 
+function updateActiveNav() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const id = entry.target.dataset.section;
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+        });
+      });
+    },
+    {
+      threshold: 0.24,
+      rootMargin: "-18% 0px -60% 0px",
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+let ticking = false;
+
+function updatePhotoOffset() {
+  if (!heroPhoto) {
+    return;
+  }
+
+  const offset = Math.min(window.scrollY * 0.04, 14);
+  heroPhoto.style.transform = `translateY(${offset}px)`;
+  ticking = false;
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updatePhotoOffset);
+      ticking = true;
+    }
+  },
+  { passive: true },
+);
+
 langButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const lang = button.dataset.setLang;
@@ -241,3 +266,5 @@ langButtons.forEach((button) => {
 });
 
 render(localStorage.getItem("site-lang") || "zh");
+updateActiveNav();
+updatePhotoOffset();
