@@ -225,6 +225,7 @@ ul {
   grid-template-columns: 1fr;
   gap: 22px;
   align-items: start;
+  padding-left: clamp(18px, 2.4vw, 34px);
 }
 
 .intro-column {
@@ -323,7 +324,12 @@ ul {
 }
 
 .content-section {
-  padding-top: 48px;
+  padding-top: 72px;
+}
+
+.content-section:not(.contact-section) {
+  min-height: calc(100svh - 128px);
+  padding-bottom: 72px;
 }
 
 .content-section::before {
@@ -432,6 +438,7 @@ ul {
 }
 
 .contact-section {
+  padding-top: 48px;
   padding-bottom: 84px;
 }
 
@@ -491,6 +498,7 @@ ul {
 
   .intro-grid {
     gap: 18px 28px;
+    padding-left: 0;
   }
 
   .internship-item {

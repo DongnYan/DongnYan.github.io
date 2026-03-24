@@ -32,6 +32,13 @@ const content = {
     },
     internships: [
       {
+        logo: "./平安银行.jpg",
+        company: "平安银行深圳分行",
+        department: "零售贷款部 实习",
+        time: "01/2024 - 02/2024",
+        location: "深圳",
+      },
+      {
         logo: "./投控东海.JPG",
         company: "深圳市投控东海投资有限公司",
         department: "并购业务部 实习",
@@ -102,6 +109,13 @@ const content = {
       languageSkills: "Language: IELTS 7.5",
     },
     internships: [
+      {
+        logo: "./平安银行.jpg",
+        company: "Ping An Bank Co., Ltd. Shenzhen Branch",
+        department: "Retail Loan Department",
+        time: "01/2024 - 02/2024",
+        location: "Shenzhen",
+      },
       {
         logo: "./投控东海.JPG",
         company: "Toposcend Capital",
@@ -235,14 +249,26 @@ function render(lang) {
 
 function updateActiveNav() {
   let currentId = sections[0]?.dataset.section;
+  let matchedId = "";
   const headerOffset = 160;
+  const probe = Math.max(window.innerHeight * 0.34, 220);
   const pageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
 
   sections.forEach((section) => {
-    if (window.scrollY + headerOffset >= section.offsetTop) {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top <= probe && rect.bottom >= probe) {
+      matchedId = section.dataset.section;
+    }
+
+    if (!matchedId && window.scrollY + headerOffset >= section.offsetTop) {
       currentId = section.dataset.section;
     }
   });
+
+  if (matchedId) {
+    currentId = matchedId;
+  }
 
   if (pageBottom && sections.length) {
     currentId = sections[sections.length - 1].dataset.section;
