@@ -8,6 +8,7 @@ const content = {
       hobbies: "爱好",
       contact: "联系",
     },
+    menuLabel: "菜单",
     hero: {
       title: "颜东宁",
       subtitle: "Dongning (Don) Yan",
@@ -86,6 +87,7 @@ const content = {
       hobbies: "Hobbies",
       contact: "Contact",
     },
+    menuLabel: "Menu",
     hero: {
       title: "颜东宁",
       subtitle: "Dongning (Don) Yan",
@@ -158,9 +160,13 @@ const content = {
 };
 
 const langButtons = document.querySelectorAll("[data-set-lang]");
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinks = document.querySelectorAll("[data-nav-link]");
 const sections = document.querySelectorAll("[data-section]");
 const heroPhoto = document.querySelector(".hero-photo");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const mobileMenuLabel = document.getElementById("mobileMenuLabel");
+const mobileMenuClosers = document.querySelectorAll("[data-close-menu]");
 
 function setText(id, value) {
   const element = document.getElementById(id);
@@ -210,10 +216,15 @@ function render(lang) {
     .querySelector('meta[property="og:description"]')
     .setAttribute("content", text.metaDescription);
 
-  setText("navProfile", text.nav.profile);
-  setText("navInternships", text.nav.internships);
-  setText("navHobbies", text.nav.hobbies);
-  setText("navContact", text.nav.contact);
+  Object.entries(text.nav).forEach(([key, value]) => {
+    document.querySelectorAll(`[data-nav="${key}"]`).forEach((link) => {
+      link.textContent = value;
+    });
+  });
+
+  if (mobileMenuLabel) {
+    mobileMenuLabel.textContent = text.menuLabel;
+  }
 
   setText("heroTitle", text.hero.title);
   setText("heroSubtitle", text.hero.subtitle);
@@ -245,6 +256,17 @@ function render(lang) {
   });
 
   localStorage.setItem("site-lang", lang);
+}
+
+function setMobileMenuOpen(isOpen) {
+  if (!mobileMenu || !mobileMenuToggle) {
+    return;
+  }
+
+  mobileMenu.hidden = !isOpen;
+  mobileMenu.classList.toggle("is-open", isOpen);
+  document.body.classList.toggle("menu-open", isOpen);
+  mobileMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
 
 function updateActiveNav() {
@@ -307,6 +329,12 @@ window.addEventListener(
 
 window.addEventListener("resize", updateActiveNav);
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 980) {
+    setMobileMenuOpen(false);
+  }
+});
+
 langButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const lang = button.dataset.setLang;
@@ -314,6 +342,33 @@ langButtons.forEach((button) => {
       render(lang);
     }
   });
+});
+
+if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("is-open");
+    setMobileMenuOpen(!isOpen);
+  });
+}
+
+mobileMenuClosers.forEach((button) => {
+  button.addEventListener("click", () => {
+    setMobileMenuOpen(false);
+  });
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 980) {
+      setMobileMenuOpen(false);
+    }
+  });
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMobileMenuOpen(false);
+  }
 });
 
 render(localStorage.getItem("site-lang") || "zh");

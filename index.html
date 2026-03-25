@@ -14,11 +14,22 @@
   <body>
     <div class="page">
       <header class="site-header">
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#profile" id="navProfile"></a>
-          <a href="#internships" id="navInternships"></a>
-          <a href="#hobbies" id="navHobbies"></a>
-          <a href="#contact" id="navContact"></a>
+          <a href="#profile" id="navProfile" data-nav="profile" data-nav-link></a>
+          <a href="#internships" id="navInternships" data-nav="internships" data-nav-link></a>
+          <a href="#hobbies" id="navHobbies" data-nav="hobbies" data-nav-link></a>
+          <a href="#contact" id="navContact" data-nav="contact" data-nav-link></a>
         </nav>
 
         <div class="lang-switch" aria-label="Language toggle">
@@ -26,6 +37,26 @@
           <button class="lang-button" type="button" data-set-lang="en">EN</button>
         </div>
       </header>
+
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <button class="mobile-menu-backdrop" type="button" data-close-menu aria-label="Close menu"></button>
+        <div class="mobile-menu-panel">
+          <div class="mobile-menu-head">
+            <span class="mobile-menu-label" id="mobileMenuLabel">Menu</span>
+            <button class="mobile-menu-close" type="button" data-close-menu aria-label="Close navigation">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
+          <nav class="mobile-nav-links" aria-label="Mobile navigation">
+            <a href="#profile" data-nav="profile" data-nav-link></a>
+            <a href="#internships" data-nav="internships" data-nav-link></a>
+            <a href="#hobbies" data-nav="hobbies" data-nav-link></a>
+            <a href="#contact" data-nav="contact" data-nav-link></a>
+          </nav>
+        </div>
+      </div>
 
       <main>
         <section class="intro" id="profile" data-section="profile">
